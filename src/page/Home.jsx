@@ -19,6 +19,10 @@ function Home() {
     fetchData('moviesTop');
     fetchData('tvPopu');
     fetchData('tvTop');
+
+    window.scrollTo(0,0);
+    // return ()=>{
+      // }
   },[])
   
   return (
@@ -52,7 +56,7 @@ function Home() {
       <div className='home2'>
         <div className='title'>
           <h3>Trending Movies</h3>
-          <a href="/movies">view more</a>
+          <NavLink to="/movies">view more</NavLink>
         </div>
         <Swiper
         slidesPerView={6}
@@ -79,7 +83,7 @@ function Home() {
       <div className='home3'>
         <div className='title'>
           <h3>Top Rated Movies</h3>
-          <a href="/movies">view more</a>
+          <NavLink to="/movies">view more</NavLink>
         </div>
         <Swiper
         slidesPerView={6}
@@ -106,7 +110,7 @@ function Home() {
       <div className='home4'>
         <div className='title'>
           <h3>Trending TV</h3>
-          <a href="/tvseries">view more</a>
+          <NavLink to="/tvseries">view more</NavLink>
         </div>
         <Swiper
         slidesPerView={6}
@@ -133,7 +137,7 @@ function Home() {
       <div className='home5'>
         <div className='title'>
           <h3>Top Rated TV</h3>
-          <a href="/tvseries">view more</a>
+          <NavLink to="/tvseries">view more</NavLink>
         </div>
         <Swiper
         slidesPerView={6}

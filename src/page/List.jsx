@@ -39,6 +39,7 @@ function List() {
     
     let type = pathName.includes("movie") ? "movie" : pathName.includes("tv") ? "tv" :''
     detail(type,id);
+
     window.scrollTo(0,0);
     // return ()=>{
       // }
@@ -46,7 +47,9 @@ function List() {
     
     
     if(!selectItem || Object.keys(selectItem).length === 0) return;
-    // selectItem가 아래에 데이터가 안받아진 상태라면 오류가 뜨니까, false일때 실행되지 않도록 함
+    // selectItem가 아래에 데이터가 안받아진 상태라면 오류가 뜨니까, 사용함
+    // selectItem 오브젝트의 키값이 한개도 없는 빈 객체일 경우가 true
+    // ㄴ빈 객체인 상태에서 리턴되고, 데이터가 생긴 후 렌더링되게 함
     
     console.log(selectItem);
 

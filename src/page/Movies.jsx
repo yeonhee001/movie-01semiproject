@@ -11,6 +11,10 @@ function Movies() {
 
   useEffect(()=>{
       fetchData('moviesPopu',page);
+
+      window.scrollTo(0,0);
+    // return ()=>{
+      // }
     },[page])
     // console.log(selectItem);
     
@@ -21,7 +25,7 @@ function Movies() {
         <p>Movies</p>
       </div>
       <form onSubmit={(e)=>{
-        e.preventDefault();
+        e.preventDefault(); // 페이지 새로고침막기
         movieSearch(e.target.search.value);
         setState('search');
       }} className='search'>
@@ -58,9 +62,8 @@ function Movies() {
       <div className='view'>
         <button onClick={()=>setPage((prevPage) => prevPage - 1)} disabled={page === 1}>이전</button>
         <button onClick={()=>setPage((prevPage) => prevPage + 1)}>이후</button>
-        {/* disabled={page === 1}을 사용하여 true일때 값을 변경할 수 없게 막음. 버튼 비활성화 */}
+        {/* prevPage 이전 상태의 값, disabled={page === 1}을 사용하여 true일때 값을 변경할 수 없게 막음. 버튼 비활성화 */}
       </div>
-      console.log(setPage);
       
     </div>
   )
