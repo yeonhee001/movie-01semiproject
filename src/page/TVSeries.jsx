@@ -2,21 +2,29 @@ import { NavLink } from 'react-router-dom'
 
 import React, { useEffect, useState } from 'react'
 import { tvdbStore } from '../tvdbState';
+import Card from '../component/Card';
 
 function TVSeries() {
   const {fetchData,data,searchResults,tvSearch,setSelectItem,selectItem} = tvdbStore();
 
   const [state,setState] = useState('all');
-    const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1)
+  const [tvList, setTvList] = useState([])
 
-  useEffect(()=>{
-      fetchData('tvPopu',page);
-      
-      window.scrollTo(0,0);
+  useEffect(() => {
+    const getMovies = async () => {
+      const newData = await fetchData('tvPopu', page);
+      if(newData){
+        setTvList([...tvList, ...newData]);
+        console.log(tvList);
+      }
+    };
+  
+    getMovies();
+    // window.scrollTo(0,0);
     // return ()=>{
-      // }
-    },[page])
-    // console.log(selectItem);
+    // }
+  }, [page]);
 
 
   return (
@@ -35,13 +43,10 @@ function TVSeries() {
       <ul className='tvlist'>
         {
           state ==='all' ?
-          data.tvPopu.map((item)=>
+          tvList.map((item)=>
             <li key={item.id} onClick={()=>{setSelectItem(item.id)}}>
               <NavLink to={`/tvseries/${item.id}`}>
-                <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} />
-                <p>{item.name}</p>
-                <span>방영일 {item.first_air_date}</span>
-                <span>평점 {item.vote_average}</span>
+                <Card item={item}/>
               </NavLink>
             </li>
           )
@@ -49,19 +54,14 @@ function TVSeries() {
           searchResults.tv.map((item)=>
             <li key={item.id} onClick={()=>{setSelectItem(item.id)}}>
               <NavLink to={`/tvseries/${item.id}`}>
-                <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} />
-                <p>{item.name}</p>
-                <span>방영일 {item.first_air_date}</span>
-                <span>평점 {item.vote_average}</span>
+                <Card item={item}/>
               </NavLink>
             </li>
           )
         }
       </ul>
       <div className='view'>
-        <button onClick={()=>setPage((prevPage) => prevPage - 1)} disabled={page === 1}>이전</button>
-        <button onClick={()=>setPage((prevPage) => prevPage + 1)}>이후</button>
-        {/* prevPage 이전 상태의 값, disabled={page === 1}을 사용하여 true일때 값을 변경할 수 없게 막음. 버튼 비활성화 */}
+      <button onClick={()=>setPage((prevPage) => prevPage + 1)}>더보기</button>
       </div>
     </div>
   )

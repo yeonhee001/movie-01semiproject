@@ -7,6 +7,7 @@ import { Autoplay } from "swiper/modules";
 import 'swiper/css';
 import { tvdbStore } from '../tvdbState';
 import { NavLink, useParams } from 'react-router-dom';
+import Card from '../component/Card';
 
 
 
@@ -57,10 +58,10 @@ function List() {
     <div className='list'>
       <div className='top'>
         <div className='bgimg' >
-            <img src={`https://image.tmdb.org/t/p/original/${selectItem.backdrop_path}`}/>
+            <img src={selectItem.backdrop_path ? `https://image.tmdb.org/t/p/original/${selectItem.backdrop_path}` : ""}/>
           <div className='imgtex'>
             <p>
-              <img src={`https://image.tmdb.org/t/p/w500/${selectItem.poster_path}`}/>
+              <img src={ selectItem.poster_path ? `https://image.tmdb.org/t/p/w500/${selectItem.poster_path}` : "/img/no_image.jpg"}/>
             </p>
             <div className='text'>
               <h2>{selectItem.title || selectItem.name}</h2>
@@ -87,13 +88,13 @@ function List() {
                   {selectItem.casts ?
                     selectItem.casts.cast.slice(0,5).map((item)=>
                       <div  key={item.credit_id}>
-                        <img src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`} alt="" />
+                        <img src={item.profile_path ? `https://image.tmdb.org/t/p/w500/${item.profile_path}` : "/img/no_image2.png"} alt="" />
                         <p>{item.name}</p>
                       </div>
                     ) : 
                     selectItem.created_by.map((item)=>
                       <div  key={item.credit_id}>
-                        {/* <img src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`} alt="" /> */}
+                        <img src={item.profile_path ? `https://image.tmdb.org/t/p/w500/${item.profile_path}` : "/img/no_image2.png"} alt="" />
                         <p>{item.name}</p>
                       </div>
                     )
@@ -130,16 +131,14 @@ function List() {
               data.moviesTop.map((item)=>
                 <SwiperSlide className='list' key={item.id}>
                   <NavLink to={`/movies/${item.id}`}>
-                    <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}/>
-                    <p>{item.title || item.name}</p>
+                    <Card item={item}/>
                   </NavLink>
                 </SwiperSlide>
               ) : 
               data.tvTop.map((item)=>
                 <SwiperSlide className='list' key={item.id}>
                   <NavLink to={`/tvseries/${item.id}`}>
-                    <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}/>
-                    <p>{item.title || item.name}</p>
+                    <Card item={item}/>
                   </NavLink>
                 </SwiperSlide>
               )

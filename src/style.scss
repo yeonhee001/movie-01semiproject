@@ -10,10 +10,11 @@ ul,li{list-style: none; margin: 0; padding: 0;}
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 140px;
+  padding: 25px 140px;
   position: fixed;
   left: 0; top: 0;
   z-index: 999;
+  transition: background 0.3s ease-in-out;
   >a{
     font-size: 2.5rem;
     font-weight: 500;
@@ -27,6 +28,7 @@ ul,li{list-style: none; margin: 0; padding: 0;}
   }
   a:hover{color: red;}
 }
+.header.active{background-color: black;}
 
 .home{
   background-color: black;
@@ -63,23 +65,22 @@ ul,li{list-style: none; margin: 0; padding: 0;}
             margin: 50px 0;
           }
           a{
+            display: inline-block;
             font-size: 1.3rem;
             font-weight: 600;
-            border: 2px solid white;
+            border: 2px solid red;
             border-radius: 10px;
             background-color: transparent;
             padding: 15px 40px;
             margin-right: 30px;
             color: white;
             cursor: pointer;
-          }
-          a:nth-of-type(1){
             background-color: red;
             border: 2px solid red;
           }
         }
         .main-img{
-          width: 400px; height: 600px;
+          width: 400px; height: auto;
           img{width: 100%;}
         }
       }
@@ -95,7 +96,7 @@ ul,li{list-style: none; margin: 0; padding: 0;}
         justify-content: space-between;
         margin-bottom: 30px;
         h3{
-          font-size: 2rem;
+          font-size: 1.7rem;
         }
         a{
           font-size: 1rem;
@@ -111,6 +112,8 @@ ul,li{list-style: none; margin: 0; padding: 0;}
         }
       }
       .list{
+        width: 100%;
+        position: relative;
         img{
           width: 100%;
           object-fit: cover;
@@ -119,17 +122,44 @@ ul,li{list-style: none; margin: 0; padding: 0;}
           font-size: 1.2rem;
           font-weight: 700;
           margin-bottom: 10px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @supports(-webkit-line-clamp: 1){
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; // 세 줄까지만 표시
+          }
         }
         span{
           display: block;
           font-size: 1rem;
           padding-bottom: 5px;
         }
+        .hov_more{
+          width: 70%;
+          position: absolute;
+          left: 50%; top: 40%;
+          transform: translate(-50%, -50%);
+          display: none;
+          span{
+            padding: 15px 0;
+            color: white;
+            border: 1px solid white;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+          }
+        }
       }
       .list:hover{
-        img{filter: brightness(0.4);}
+        img{filter: brightness(0.2);}
         p{color: rgb(240, 37, 37);}
         span{color: rgb(221, 88, 88);}
+        .hov_more{
+          display: block;
+          >span{
+            color: white;
+          }
+        }
       }
   }
 }
@@ -177,32 +207,62 @@ ul,li{list-style: none; margin: 0; padding: 0;}
     margin: 0 auto;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 24.4px;
     li{
-      width: 15%;
+      width: 18%;
       margin-bottom: 50px;
       a{
+        width: 100%;
+        display: inline-block;
         margin-bottom: 30px;
+        position: relative;
         img{
           width: 100%;
+          
         }
         p{
-          display: inline-block;
           margin: 10px 0;
           font-size: 1.2rem;
+          font-weight: 500;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @supports(-webkit-line-clamp: 1){
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; // 세 줄까지만 표시
+          }
         }
         span{
           display: block;
           font-size: 0.8rem;
           padding-bottom: 5px;
         }
+        .hov_more{
+          width: 70%;
+          position: absolute;
+          left: 50%; top: 40%;
+          transform: translate(-50%, -50%);
+          display: none;
+          span{
+            padding: 15px 0;
+            color: white;
+            border: 1px solid white;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+          }
+        }
       }
       a:hover{
-        img{filter: brightness(0.5);}
+        img{filter: brightness(0.2);}
         p{color: rgb(240, 37, 37);}
         span{color: rgb(221, 88, 88);}
+        .hov_more{
+          display: block;
+          >span{
+            color: white;
+          }
+        }
       }
     }
   }
@@ -218,11 +278,10 @@ ul,li{list-style: none; margin: 0; padding: 0;}
       font-size: 1.2rem;
       border: none;
       border-radius: 50px;
-      background-color: rgb(209, 69, 69);
+      background-color: rgb(221, 63, 63);
       color: white;
       cursor: pointer;
     }
-    button:nth-of-type(1){margin-right: 20px; background-color: rgb(227, 113, 113);}
   }
 }
 
@@ -233,6 +292,7 @@ ul,li{list-style: none; margin: 0; padding: 0;}
   .top{
     width: 100%;
     .bgimg{
+      width: 100%;
       position: relative;
       >img{
         filter: brightness(0.2);
@@ -305,14 +365,15 @@ ul,li{list-style: none; margin: 0; padding: 0;}
             }
             .cast{
               display: flex;
-              align-items: center;
+              align-items: flex-start;
               justify-content: left;
               margin-top: 30px;
               >div{
                 img{
-                  width: 70%;
+                  width: 100px;
+                  padding-right: 15px;
                 }
-                p{width: 100%; font-size: 0.8rem; padding-right: 15px;}
+                p{width: 100px; font-size: 0.8rem; padding-right: 15px;}
               }
             }
           }
@@ -355,6 +416,11 @@ ul,li{list-style: none; margin: 0; padding: 0;}
               font-weight: 400;
               margin-bottom: 10px;
             }
+            span{
+              display: block;
+              font-size: 0.8rem;
+              padding-bottom: 5px;
+            }
           }
         }
         .list:hover{
@@ -374,10 +440,19 @@ footer{
   margin: 0 auto;
   padding: 30px 140px 80px;
   border-top: 1px solid #555;
-  a{
-    font-size: 0.8rem;
-    color: #999;
-    padding-right: 15px;
-    margin-bottom: 20px;
+  >a{
+    display: inline-block;
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 30px 0;
+  }
+  div{
+    >a{
+      display: inline-block;
+      font-size: 0.8rem;
+      color: #999;
+      padding-right: 15px;
+      margin-bottom: 20px;
+    }
   }
 }

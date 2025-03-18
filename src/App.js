@@ -7,6 +7,7 @@ import List from './page/List';
 import './style.scss';
 import './style-res.scss';
 import Header from './page/Header';
+import Footer from './page/Footer';
 
 function App() {
   return (
@@ -22,15 +23,7 @@ function App() {
           <Route path='/tvseries/:id' element={<List/>}/>
         </Routes>
       </main>
-      <footer>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/'>고객센터</NavLink>
-        <NavLink to='/'>이용약관</NavLink>
-        <NavLink to='/'>개인정보처리방침</NavLink>
-        <NavLink to='/'>법적고지</NavLink>
-        <NavLink to='/'>이벤트</NavLink>
-        <NavLink to='/'>인재채용</NavLink>
-      </footer>
+      <Footer/>
     </Router>
   );
 }

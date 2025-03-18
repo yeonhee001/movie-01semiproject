@@ -52,6 +52,9 @@ export const tvdbStore = create((set)=>({
       data: { ...state.data, [key]:res.data.results }
     }));
     // console.log(type, page);
+
+    return res.data.results; // 데이터를 반환
+
   },
 
   movieSearch : async (value)=>{
