@@ -20,8 +20,9 @@ https://movie-02semiproject.vercel.app
 
 ### 3. 핵심 기능
 
-* 영화 박스오피스 노출
+* 영화 및 TV프로그램 정보 검색
 * 미디어 상세 정보 확인
+* 최신 콘텐츠 리스트 제공
 
 ### 4. 주요 기술 스택
 
@@ -39,11 +40,14 @@ React, Sass, JavaScript, Zustand, Axios, Swiper
 
 ## ⚙️ 주요 기능
 
-### 1. 영화 박스오피스 노출
-* 객
+### 1. 영화 및 TV프로그램 정보 검색
+* 사용자가 영화, TV 프로그램 키워드 입력시 결과값 제공
 
 ### 2. 미디어 상세 정보 확인
-* 용
+* 선택한 미디어의 개요, 장르, 방영일, 출연진, 예고편 등 정보 확인 가능
+  
+### 3. 최신 콘텐츠 리스트 제공
+* 인기있는 영화 및 TV 프로그램을 한눈에 볼 수 있도록 최신 업데이트된 작품 목록 제공
 
 
 ## 🗂️ 폴더 구조
@@ -81,29 +85,36 @@ React, Sass, JavaScript, Zustand, Axios, Swiper
 
 | Badge | 언어 | 설명 |
 | :---:| :---: | :---: |
-|![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white)| **HTML5** | 웹 페이지의 **구조 정의** |
 |![CSS](https://img.shields.io/badge/CSS-663399?style=flat-square&logo=CSS&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white)| **CSS3 / Sass** | **스타일링** 및 **디자인 적용** |
 |![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=flat-square&logo=JavaScript&logoColor=%23F7DF1E)| **JavaScript (Vanilla JS)** | **동적 기능** 및 **사용자 인터랙션 처리** | 
 
-### 3. 라이브러리 (Libraries & Plugins)
-
-| Badge | 라이브러리 | 설명 |
-| :---:| :---: | :---: |
-|![FullCalendar](https://img.shields.io/badge/FullCalendar-ffb500?style=flat-square&logo=FullCalendar&logoColor=white)| **FullCalendar** | **캘린더 기능 구현** |
-|![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=Swiper&logoColor=white)| **Swiper.js** | **이미지 슬라이드 및 캐러셀 효과** |
-
-### 4. 데이터 처리 (Data Handling & Storage)
-
-| Badge | 기술 | 설명 |
-| :---:| :---: | :---: |
-|![LocalStorage](https://img.shields.io/badge/LocalStorage-006866?style=flat-square&logo=LocalStorage&logoColor=white)| **LocalStorage** | **브라우저 내 데이터 저장 및 관리** |
-
-### 5. 개발 및 빌드 도구 (Development & Build Tools)
+### 3. 라이브러리 및 프레임워크 (Libraries & Frameworks)
 
 | Badge | 항목 | 설명 |
 | :---:| :---: | :---: |
-|![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)| **버전 관리** | GitHub |
-|![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white) | **디자인 & UI/UX** | Figma (화면 설계 및 프로토타이핑) |
+|![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white)| **React** | **컴포넌트 기반 UI 라이브러리** |
+|![Zustand](https://img.shields.io/badge/Zustand-8C4A25?style=flat-square&logo=Zustand&logoColor=white)| **Zustand** | **전역 상태 관리** |
+|![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=Swiper&logoColor=white)| **Swiper** | **이미지 슬라이드 및 캐러셀 효과** |
+
+### 4. 데이터 처리 (Data Handling)
+
+| Badge | 기술 | 설명 |
+| :---:| :---: | :---: |
+|![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white)| **Axios** | **API** 호출 후 **데이터 가져오기 및 전송** |
+|![Zustand](https://img.shields.io/badge/Zustand-8C4A25?style=flat-square&logo=Zustand&logoColor=white)| **Zustand** | **전역 상태** 및 **데이터 흐름 관리** |
+
+### 5. 개발 빌드 도구 (Build Tools)
+
+| Badge | 항목 | 설명 |
+| :---:| :---: | :---: |
+|![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat-square&logo=Node.js&logoColor=white)| Node.js | **패키지 관리** 및 **개발 환경 실행** 
+|![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)| GitHub | **버전 관리** 
+
+### 6. 배포 (Development)
+
+| Badge | 항목 | 설명 |
+| :---:| :---: | :---: |
+|![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white)| Vercel | **React 프로젝트 배포** 
 
 ## 💥 트러블 슈팅
 
@@ -114,12 +125,3 @@ React, Sass, JavaScript, Zustand, Axios, Swiper
     *헤더가 아래로 스크롤시 숨겨지는 방식인데, 버거 메뉴 클릭한 상태에서도 적용되는 상황
     
     ⇒ **해결방법**: 버거 버튼에 active 클래스 여부를 확인하여, true일 경우 스크롤을 숨기게 하여 버거 메뉴가 보일 시 스크롤이 불가하게 작업함
-
-### 📌 index.html
-
- 1. [메인 슬라이드 섹션] 첫 페이지 로드 시 메인 슬라이드의 텍스트 효과가 한번에 적용되어 슬라이드가 넘어가도 애니메이션 효과가 없는 이슈 발생
-  
-    *메인 슬라이드 위 각 슬라이드마다 텍스트 애니메이션 효과를 적용한 상황
-       
-    ⇒ **해결방법**: swiper.on을 사용하여 슬라이드가 움직일 때마다 텍스트 효과가 나타나게 적용
-<br>
