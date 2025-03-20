@@ -6,7 +6,7 @@ yeonFLIX는 사용자가 영화 및 TV프로그램에 대한 정보를 확인할
 themoviedb API를 활용하여 개발되었습니다.
 
 ## 🔗 배포 URL
-https://yeonhee001.github.io/sangreen-01project/
+https://movie-02semiproject.vercel.app
 
 ## 📑 요약
 
