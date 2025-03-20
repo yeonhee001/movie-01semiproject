@@ -58,12 +58,12 @@ React, Sass, JavaScript, Zustand, Axios, Swiper
 ┃  ┣ 📂component
 ┃  ┃  ┣ 📜Card.jsx
 ┃  ┣ 📂page
-┃  ┃  ┣ 📜Footer.jsx
 ┃  ┃  ┣ 📜Header.jsx
+┃  ┃  ┣ 📜Footer.jsx
 ┃  ┃  ┣ 📜Home.jsx
-┃  ┃  ┣ 📜List.jsx
 ┃  ┃  ┣ 📜Movies.jsx
 ┃  ┃  ┣ 📜TVSeries.jsx
+┃  ┃  ┣ 📜List.jsx
 ┃  ┣ 📜App.js
 ┃  ┣ 📜style.scss
 ┃  ┣ 📜style-res.scss
@@ -118,10 +118,16 @@ React, Sass, JavaScript, Zustand, Axios, Swiper
 
 ## 💥 트러블 슈팅
 
-### 📌 header.html
+### 📌 Movies.jsx / TVSeries.jsx
 
- 1. 버거 메뉴 클릭 후 스크롤시 하단에 여백이 생기는 이슈 발생
+ 1. Movies, TV Series에서 검색 후, 선택한 카테고리 재클릭시 기존의 리스트가 표시되지 않는 이슈
 
     *헤더가 아래로 스크롤시 숨겨지는 방식인데, 버거 메뉴 클릭한 상태에서도 적용되는 상황
     
     ⇒ **해결방법**: 버거 버튼에 active 클래스 여부를 확인하여, true일 경우 스크롤을 숨기게 하여 버거 메뉴가 보일 시 스크롤이 불가하게 작업함
+
+ 2. Movies, TV Series에서 더보기 버튼 클릭 시, 리스트가 새롭게 갱신되는 이슈
+
+### 📌 List.jsx
+
+ 1. 상세페이지에서 URL의 ID값과 해당 데이터의 ID값을 비교하여 일치하는 경우에만 표시되도록 처리해야하는 이슈
