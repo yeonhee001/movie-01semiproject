@@ -126,8 +126,6 @@ React, Sass, JavaScript, Zustand, Axios, Swiper
 
  2. Movies, TV Series에서 더보기 버튼 클릭 시, 리스트가 새롭게 갱신되는 이슈
 
-    *데이터가 누적이 되지 않아 
-
     ⇒ **해결방법**: 데이터가 누적되지 않아서, setMovList를 사용하여 기존 데이터와 새로운 데이터를 합쳐 누적시킨 후, map 함수에서 movList로 변경하여 더보기 버튼 클릭 시 리스트가 계속해서 보여지도록 적용
 
 ### 📌 List.jsx
