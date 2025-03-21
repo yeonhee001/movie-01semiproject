@@ -134,6 +134,4 @@ React, Sass, JavaScript, Zustand, Axios, Swiper
 
  1. 상세페이지에서 URL의 ID값과 해당 데이터의 ID값을 비교하여 일치하는 경우에만 표시되도록 처리해야하는 이슈
 
-    *헤더
-
-    ⇒ **해결방법**: 버거 버튼에 active 클래스 여부를 확인하여, true일 경우 스크롤을 숨기게 하여 버거 메뉴가 보일 시 스크롤이 불가하게 작업함
+    ⇒ **해결방법**: window.location.pathname에서 추출한 type과 id 값을 사용하여, tvdbState에서 데이터를 가져오는 detail 함수에 type과 id를 전달해 상세 데이터를 불러오도록 적용
