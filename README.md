@@ -116,7 +116,7 @@ React, Sass, JavaScript, Zustand, Axios, Swiper
 | :---:| :---: | :---: |
 |![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white)| Vercel | **React 프로젝트 배포** 
 
-## 📝 소연희의 개발 상세
+## 📝 트러블이슈
 
 ### 📌 Movies.jsx / TVSeries.jsx
 
